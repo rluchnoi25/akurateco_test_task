@@ -31,9 +31,6 @@ class PaymentProcessor
 
         $response = $this->client->sale($request);
 
-        // testing
-        //var_dump($response);
-
         $status = $response['status'] ?? 'declined';
 
         $handler = $this->registry->getHandler($status);

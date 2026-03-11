@@ -53,10 +53,8 @@ class PaymentGatewayClient
             'client_key' => $this->publicKey,
 
             'order_id' => $request->orderId,
-            //'order_amount' => number_format($request->amount, 2, '.', ''),
             'order_amount' => $request->orderAmount,
             'order_currency' => $request->orderCurrency,
-            //'order_description' => 'Product purchase',
             'order_description' => $request->orderDescription,
 
             'card_number' => $request->cardNumber,
@@ -75,7 +73,6 @@ class PaymentGatewayClient
 
             'payer_ip' => $request->payerIP,
 
-            //'term_url_3ds' => 'https://frontend.com/checkout-complete' // Fake fronetnd return url
             'term_url_3ds' => $request->termUrl3ds,
         ];
     }
